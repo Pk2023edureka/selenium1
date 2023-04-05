@@ -16,15 +16,15 @@ public class Common {
 		String fs = System.getProperty("file.separator");
 		String path = CurDir + fs + "drivers" + fs;
 
-		ChromeOptions co = new ChromeOptions();
-		co.addArguments("--disable-notifications");
+		ChromeOptions cop = new ChromeOptions();
+		cop.addArguments("--disable-notifications");
 		//co.addArguments("--headless");
-		co.setAcceptInsecureCerts(true);
+		cop.setAcceptInsecureCerts(true);
 
 		if (browser.equalsIgnoreCase("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver", path + "chromedriver.exe");
-			driver = new ChromeDriver(co);
+			driver = new ChromeDriver(cop);
 		}
 
 		else if (browser.equalsIgnoreCase("edge")) {
